@@ -1,0 +1,23 @@
+/**************** Start accordion styling *****************/
+.ui-accordion{
+	margin: 0 -15px;
+	overflow: hidden;
+}
+
+.ui-accordion-header{
+	position: relative;
+	margin: 0;
+}
+
+.ui-accordion-content{
+	padding: 15px;
+}
+
+
+.ui-accordion-closed .ui-accordion-content{
+	opacity: 0;
+	overflow: hidden;
+	display:none;
+}
+
+/**************** End accordion styling *****************/

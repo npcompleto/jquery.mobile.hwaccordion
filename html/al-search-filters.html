@@ -1,0 +1,192 @@
+<div data-add-back-btn="false" data-role="page" id="al-search-filters">
+	<div data-role="header" data-id="header" data-position="fixed"
+		data-update-page-padding="false" data-tap-toggle="false"
+		data-theme="c1" data-transition="none" style="z-index:3000">
+		<div id="al-search-filters-back-btn" class="localize ui-btn-left back-btn-visibility"
+			data-role="button" data-icon="arrow-l" data-position="left" data-theme="c1">Back</div>
+		<h1 id="al-search-filters-title" class="localize">Ricerca</h1>
+	</div>
+
+	<div data-role="content">
+	<ul data-inset="true" data-role="listview" data-theme="f" class="ui-ul-container-with-shadow" style="margin-top: -33px !important;">
+			<li class="ui-li-inner-shadow" style="overflow: hidden; padding-bottom: 15px; min-height: 530px;">
+				<div style="padding:5px;">
+					<ul data-role="listview" data-theme="f" data-divider-theme="steelbar">
+						<li>&nbsp;</li>
+						<li data-role="list-divider" id="al-search-filterssubtitle-lstdiv" class="localize" style="z-index:300; padding-bottom: 15px; padding-top: 15px;">Cosa vuoi cercare?</li>
+						<li class="transparent-li">
+						
+						<div data-role="accordion" data-collapsed-icon="accordion-no-border" data-iconpos="right" id="al-search-filters-accordioncontainer" data-theme="h4" data-one-at-a-time="true">
+							<div data-role="accordion-element">
+								<div data-role="accordion-header">
+									<input type="radio" name="al-search-filters-category" id="al-search-filters-category-branch" data-theme="none" value="branch"/> 
+									<label for="al-search-filters-category-branch" id="al-search-filters-category-branch-lbl" class="localize">Filiale</label>
+								</div>
+								<div data-role="accordion-content">
+									<ul data-role="listview" data-theme="f" data-divider-theme="graybar">
+										<li data-icon="false">
+											<input type="checkbox" id="al-search-filters-category-branch-services-bancomat" name="al-search-filters-category-branch-services" data-theme="none" value="bancomat"/>
+											<label id="al-search-filters-branch-services-bancomat-lbl" for="al-search-filters-category-branch-services-bancomat" class="localize">Bancomat</label>
+										</li>
+										<li data-icon="false">
+											<input type="checkbox" id="al-search-filters-category-branch-services-tickets" name="al-search-filters-category-branch-services" data-theme="none" value="tickets"/>
+											<label id="al-search-filters-category-branch-services-tickets-lbl" for="al-search-filters-category-branch-services-tickets" class="localize">Biglietteria Eventi</label>
+										</li>
+										<li data-icon="false">
+											<input type="checkbox" id="al-search-filters-category-branch-services-telepass" name="al-search-filters-category-branch-services" data-theme="none" value="telepass"/>
+											<label id="al-search-filters-category-branch-services-telepass-lbl" for="al-search-filters-category-branch-services-telepass" class="localize">Consegna Telepass Family</label>
+										</li>
+									</ul>
+								</div>
+							</div>
+							
+							<div data-role="accordion-element">
+								<div data-role="accordion-header">
+									<input type="radio" name="al-search-filters-category" id="al-search-filters-category-bancomat" data-theme="none" value="bancomat"/> 
+									<label for="al-search-filters-category-bancomat" id="al-search-filters-category-bancomat-lbl" class="localize">Bancomat</label>
+									
+								</div>
+								<div data-role="accordion-content">
+									<ul data-role="listview" data-theme="f" data-divider-theme="graybar">
+										<li data-icon="false">
+											<input type="checkbox" id="al-search-filters-category-bancomat-services-withdrawal" name="al-search-filters-category-bancomat-services" data-theme="none" value="anticipo contanti"/>
+											<label id="al-search-filters-category-bancomat-services-withdrawal-lbl" for="al-search-filters-category-bancomat-services-withdrawal" class="localize">Prelievi e anticipo Contanti</label>
+										</li>
+										<li data-icon="false">
+											<input type="checkbox" id="al-search-filters-category-bancomat-services-balance" name="al-search-filters-category-bancomat-services" data-theme="none" value="saldo e movimenti"/>
+											<label id="al-search-filters-category-bancomat-services-balance-lbl" for="al-search-filters-category-bancomat-services-balance" class="localize">Consultazioni saldo e movimenti</label>
+										</li>
+										<li data-icon="false">
+											<input type="checkbox" id="al-search-filters-category-bancomat-services-cards" name="al-search-filters-category-bancomat-services" data-theme="none" value="Carte UniCredit"/>
+											<label id="al-search-filters-category-bancomat-services-cards-lbl" for="al-search-filters-category-bancomat-services-cards" class="localize">Funzioni Carte UniCredit</label>
+										</li>
+										<li data-icon="false">
+											<input type="checkbox" id="al-search-filters-category-bancomat-services-titles" name="al-search-filters-category-bancomat-services" data-theme="none" value="deposito titoli"/>
+											<label id="al-search-filters-category-bancomat-services-titles-lbl" for="al-search-filters-category-bancomat-services-titles" class="localize">Informazioni deposito titoli</label>
+										</li>
+										<li data-icon="false">
+											<input type="checkbox" id="al-search-filters-category-bancomat-services-millegenius" name="al-search-filters-category-bancomat-services" data-theme="none" value="MilleGenius Club"/>
+											<label id="al-search-filters-category-bancomat-services-millegenius-lbl" for="al-search-filters-category-bancomat-services-millegenius" class="localize">MilleGenius Club</label>
+										</li>
+										<li data-icon="false">
+											<input type="checkbox" id="al-search-filters-category-bancomat-services-depository" name="al-search-filters-category-bancomat-services" data-theme="none" value="Cassa Continua"/>
+											<label id="al-search-filters-category-bancomat-services-depository-lbl" for="al-search-filters-category-bancomat-services-depository" class="localize">Cassa Continua</label>
+										</li>
+										<li data-icon="false">
+											<input type="checkbox" id="al-search-filters-category-bancomat-services-check" name="al-search-filters-category-bancomat-services" data-theme="none" value="Versamento contante e assegni"/>
+											<label id="al-search-filters-category-bancomat-services-check-lbl" for="al-search-filters-category-bancomat-services-check" class="localize">Versamento contante e assegni</label>
+										</li>
+										<li data-icon="false">
+											<input type="checkbox" id="al-search-filters-category-bancomat-services-check2424" name="al-search-filters-category-bancomat-services" data-theme="none" value="Versamento contante e assegni 24 ore su 24"/>
+											<label id="al-search-filters-category-bancomat-services-check2424-lbl" for="al-search-filters-category-bancomat-services-check2424" class="localize">Versamento contante e assegni 24 ore su 24</label>
+										</li>
+										<li data-icon="false">
+											<input type="checkbox" id="al-search-filters-category-bancomat-services-donations" name="al-search-filters-category-bancomat-services" data-theme="none" value="Donazioni"/>
+											<label id="al-search-filters-category-bancomat-services-donations-lbl" for="al-search-filters-category-bancomat-services-donations" class="localize">Donazioni</label>
+										</li>
+										<li data-icon="false">
+											<input type="checkbox" id="al-search-filters-category-bancomat-services-mav" name="al-search-filters-category-bancomat-services" data-theme="none" value="Pagamenti MAV-RAV"/>
+											<label id="al-search-filters-category-bancomat-services-mav-lbl" for="al-search-filters-category-bancomat-services-mav" class="localize">Pagamenti MAV-RAV</label>
+										</li>
+										<li data-icon="false">
+											<input type="checkbox" id="al-search-filters-category-bancomat-services-mobilecc" name="al-search-filters-category-bancomat-services" data-theme="none" value="Ricariche telefoniche con carte di credito"/>
+											<label id="al-search-filters-category-bancomat-services-mobilecc-lbl" for="al-search-filters-category-bancomat-services-mobilecc" class="localize">Ricariche telefoniche con carte di credito</label>
+										</li>
+										<li data-icon="false">
+											<input type="checkbox" id="al-search-filters-category-bancomat-services-mobile" name="al-search-filters-category-bancomat-services" data-theme="none" value="Ricariche telefoniche"/>
+											<label id="al-search-filters-category-bancomat-services-mobile-lbl" for="al-search-filters-category-bancomat-services-mobile" class="localize">Ricariche telefoniche</label>
+										</li>
+										<li data-icon="false">
+											<input type="checkbox" id="al-search-filters-category-bancomat-services-mobileo" name="al-search-filters-category-bancomat-services" data-theme="none" value="Altre ricariche"/>
+											<label id="al-search-filters-category-bancomat-services-mobileo-lbl" for="al-search-filters-category-bancomat-services-mobileo" class="localize">Altre ricariche</label>
+										</li>
+										<li data-icon="false">
+											<input type="checkbox" id="al-search-filters-category-bancomat-services-telecom" name="al-search-filters-category-bancomat-services" data-theme="none" value="Bollette Telecom - Enel - Iride"/>
+											<label id="al-search-filters-category-bancomat-services-telecom-lbl" for="al-search-filters-category-bancomat-services-telecom" class="localize">Bollette Telecom - Enel - Iride</label>
+										</li>
+										<li data-icon="false">
+											<input type="checkbox" id="al-search-filters-category-bancomat-services-tim" name="al-search-filters-category-bancomat-services" data-theme="none" value="Servizi TIM"/>
+											<label id="al-search-filters-category-bancomat-services-tim-lbl" for="al-search-filters-category-bancomat-services-tim" class="localize">Servizi TIM</label>
+										</li>
+										<li data-icon="false">
+											<input type="checkbox" id="al-search-filters-category-bancomat-services-timcards" name="al-search-filters-category-bancomat-services" data-theme="none" value="Acquisto carte servizi TIM"/>
+											<label id="al-search-filters-category-bancomat-services-timcards-lbl" for="al-search-filters-category-bancomat-services-timcards" class="localize">Acquisto carte servizi TIM</label>
+										</li>
+										<li data-icon="false">
+											<input type="checkbox" id="al-search-filters-category-bancomat-services-vodafonecards" name="al-search-filters-category-bancomat-services" data-theme="none" value="Acquisto carte servizi Vodafone"/>
+											<label id="al-search-filters-category-bancomat-services-vodafonecards-lbl" for="al-search-filters-category-bancomat-services-vodafonecards" class="localize">Acquisto carte servizi Vodafone</label>
+										</li>
+										<li data-icon="false">
+											<input type="checkbox" id="al-search-filters-category-bancomat-services-trenitalia" name="al-search-filters-category-bancomat-services" data-theme="none" value="Trenitalia"/>
+											<label id="al-search-filters-category-bancomat-services-trenitalia-lbl" for="al-search-filters-category-bancomat-services-trenitalia" class="localize">Trenitalia</label>
+										</li>
+									</ul>
+								</div>
+							</div>
+							
+							<div data-role="accordion-element">
+								<div data-role="accordion-header">
+									
+									<input type="radio" name="al-search-filters-category" id="al-search-filters-category-more" data-theme="none" value="more"/> 
+									<label for="al-search-filters-category-more" id="al-search-filters-category-more-lbl" class="localize">Altro</label>
+									
+								</div>
+								<div data-role="accordion-content">
+									<ul data-role="listview" data-theme="f" data-divider-theme="graybar">
+										<li data-icon="false">
+											<input type="radio" id="al-search-filters-category-more-services-businesssm" name="al-search-filters-category-more-services" data-theme="none" checked="checked" value="R"/>
+											<label id="al-search-filters-category-more-services-businesssm-lbl" for="al-search-filters-category-more-services-businesssm" class="localize">CENTRI PICCOLE E MEDIE IMPRESE</label>
+										</li>
+										<li data-icon="false">
+											<input type="radio" id="al-search-filters-category-more-services-private" name="al-search-filters-category-more-services" data-theme="none" value="P"/>
+											<label id="al-search-filters-category-more-services-private-lbl" for="al-search-filters-category-more-services-private" class="localize">FILIALI PRIVATE BANKING</label>
+										</li>
+										<li data-icon="false">
+											<input type="radio" id="al-search-filters-category-more-services-businesl" name="al-search-filters-category-more-services" data-theme="none" value="C"/>
+											<label id="al-search-filters-category-more-services-businesl-lbl" for="al-search-filters-category-more-services-businesl" class="localize">CENTRI CORPORATE</label>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>			
+							
+						</li>
+					</ul>
+					<div style="width: 100%; min-height:130px; height:130px; max-height:130px;">&nbsp;</div>
+				</div>
+			</li>
+		</ul>
+		
+
+		<div id="al-search-filters-bottom-panel">
+			<div style="height: 30px;border-bottom: 1px groove rgba(0,0,0,0.1); background-color: white">
+				<p id="al-search-filters-address-lbl" class="localize" style="color: #40718a;font-weight: bold;margin-left: 15px;line-height: 30px;">Indirizzo</p>
+			</div>
+			
+			<div class="container_16">
+				
+				<div class="grid_10" data-role="compositeinputfield"   style="margin-top: 15px;" data-custom-placeholder="true" data-input-text-align="left">
+					<label for="al-search-filter-address" id="al-search-filter-address-lbl" class="localize">Esempio: Via Ugo Bassi, Bologna</label> 
+					<input type="text" name="al-search-filter-address" id="al-search-filter-address" value="{{pageData.inputData.tr-credittransfer-create-location-inpt}}"/>
+				</div>
+				
+				
+				<div class="prefix_1 grid_5">
+					<div id="al-search-filters-search-btn" class="localize ui-large" data-role="button" data-theme="h1">Cerca</div>
+				</div>
+				
+				<div class="grid_10 suffix_6">
+					<input type="checkbox" name="al-search-currentpos-checkbox" id="al-search-currentpos-checkbox" data-theme="none" />
+					<label for="al-search-currentpos-checkbox" id="al-search-currentpos-lbl" style="padding: 0;margin: 0; margin-bottom: 4px;">Posizione Attuale</label>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	<div data-role="popup" data-history="false" id="al-search-filters-disambiguation-popup" >
+		<ul data-role='linkedlistview' data-inset='true' data-divider-theme="bluettobar" data-theme="f" >
+		</ul>
+	</div>
+	
+</div>
