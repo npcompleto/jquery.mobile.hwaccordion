@@ -1,6 +1,6 @@
 /**
- * @author Carmelo Portelli
- * @version 0.2[alpha]
+ * @author npcompleto
+ * @version 0.0.1a
  */
 (function( $, undefined ) {
 
@@ -21,10 +21,10 @@ $.widget( "mobile.hwaccordion", $.mobile.widget, {
 		initSelector: ":jqmData(role='hwaccordion')"
 	},
 
-	_create: function() {
+	_create: function(refresh) {
+		
 		//console.log("accordion creation.");
 		var $accordionRoot = this;
-		
 		var $elem = this.element;
 		var opts = this.options;
 		var that = this;
@@ -83,9 +83,9 @@ $.widget( "mobile.hwaccordion", $.mobile.widget, {
 			//if(this.preserve3d) $elem.css(prefix + "transform-style", "preserve-3d");
 		}
 		
-		$elem.addClass("ui-accordion");
+		$elem.addClass("ui-accordion ui-accordion-"+opts.theme);
 		
-		var collapsedIcon = $elem.jqmData( "collapsed-icon" );
+		//var collapsedIcon = $elem.jqmData( "collapsed-icon" );
 		
 		var maxZ = $accordionElems.length*4;
 		var startingZ = maxZ;
@@ -102,7 +102,7 @@ $.widget( "mobile.hwaccordion", $.mobile.widget, {
 			$this.jqmData("accordion-z-position", startingZ);
 			$this.css('z-index', startingZ);
 			$this.css('position', "relative");
-			$this.find(":jqmData(role='accordion-header')").each(function(){
+			$this.find(":jqmData(role='accordion-header'):not(.ui-accordion-header)").each(function(){
 				//Header initialization
 				$header = $(this);
 				$accordionElems[i].header = $header;
@@ -115,17 +115,17 @@ $.widget( "mobile.hwaccordion", $.mobile.widget, {
 					shadow: false,
 					corners: false,
 					iconpos: $elem.jqmData( "iconpos" ) || opts.iconPos || "left",
-					icon: collapsedIcon,
+					icon: opts.icon,
 					mini: opts.mini,
 					theme: opts.theme
 				});
-				
+				if(refresh) $header.unbind("click");
 				$header.click(function(e){
 					that._toggleAccordion($accordionRoot, $(this).parent(), prefix);
 				});
 			});
 			
-			$this.find(":jqmData(role='accordion-content')").each(function(){
+			$this.find(":jqmData(role='accordion-content'):not(.ui-accordion-content)").each(function(){
 				//Content initialization
 				$content = $(this);
 				$accordionElems[i].content = $content;
@@ -141,13 +141,8 @@ $.widget( "mobile.hwaccordion", $.mobile.widget, {
 		}
 		
 
-		this._closeAllAccordion($accordionRoot, $elem, prefix);
-		//Starting closed
-//		$elem.closest(":jqmData(role=page)").one("pageshow",function(e,ui){
-//			$accordionRoot._closeAllAccordion($accordionRoot, $elem, prefix, true);
-//		});
-		
-		//console.log("Accordion creation duration(ms): " + (new Date().getTime() - begin.getTime()));
+		if(!refresh)
+			this._closeAllAccordion($accordionRoot, $elem, prefix);
 	},
 	
 	_translateContent: function($accordionRoot, prefix, $content, yTranslation, immediate, forceClose){
@@ -317,14 +312,22 @@ $.widget( "mobile.hwaccordion", $.mobile.widget, {
 	},
 	
 	refresh: function( create ) {
-		this._create();
+		this._create(true);
 	},
 	disableAll: function( close ) {
 		$(this.element[0]).find("input, textarea").attr('disabled','disabled');
+	},	
+	open: function(accordionIndex){
+		if(this.accordionElements[accordionIndex]){
+			this._openAccordion(this, $(this.accordionElements[accordionIndex]), "-webkit-", undefined);
+		}
+		
 	},
-	
-	expand: function(){
-		this._openAccordion(this, $(this.accordionElements[0]), "-webkit-", undefined);
+	close: function(accordionIndex){
+		if(this.accordionElements[accordionIndex]){
+			this._closeAccordion(this, $(this.accordionElements[accordionIndex]), "-webkit-", undefined);
+		}
+		
 	}
 });
 
