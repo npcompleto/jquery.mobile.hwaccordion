@@ -13,11 +13,13 @@ $.widget( "mobile.hwaccordion", $.mobile.widget, {
 		dividerTheme: "b",
 		splitIcon: "arrow-r",
 		splitTheme: "b",
+		icon: null,
 		inset: false,
 		timing: "800ms",
 		autoScroll: false,
 		disableInput: false,
 		useAnimation: true,
+		radioMode: false,
 		initSelector: ":jqmData(role='hwaccordion')"
 	},
 
@@ -177,7 +179,7 @@ $.widget( "mobile.hwaccordion", $.mobile.widget, {
 				if($accordion.hasClass("ui-accordion-closing")){
 	            	$accordion.removeClass("ui-accordion-closing");			    
 	   				$accordion.addClass("ui-accordion-closed");
-	   				$(this).css("display", "none");
+	   				//$(this).css("display", "none");
 				}else{
 					if($accordionRoot.options.autoScroll === true){
 						if ($accordionRoot.touchOverflowScrolling)
@@ -243,8 +245,8 @@ $.widget( "mobile.hwaccordion", $.mobile.widget, {
 		else{
 			$accordion.removeClass("ui-accordion-closing").addClass("ui-accordion-closed");
 			var $content = $accordion[0].content;
-			if($content)
-				$content.css("display", "none");
+//			if($content)
+//				$content.css("display", "none");
 		}
 		
 		
@@ -272,8 +274,7 @@ $.widget( "mobile.hwaccordion", $.mobile.widget, {
 			$accordion.find("input, textarea").removeAttr('disabled');
 		}
 		
-		var oneatatime = $elem.jqmData( "one-at-a-time" );
-		if(oneatatime){
+		if(this.options.radioMode){
 			//Close opened accordion
 			$elem.find(".ui-accordion-element:not(.ui-accordion-closed)").each(function(){
 				that._closeAccordion($accordionRoot, $(this), prefix, true);
@@ -284,7 +285,7 @@ $.widget( "mobile.hwaccordion", $.mobile.widget, {
 		if(this.options.useAnimation){
 			var $content = $accordion[0].content;
 			if($content){
-				$content.css("display", "block");
+				//$content.css("display", "block");
 				setTimeout(function(){that._translateContent($accordionRoot, prefix, $content, "0");},0);
 			}
 		}
@@ -293,8 +294,8 @@ $.widget( "mobile.hwaccordion", $.mobile.widget, {
 				$(document).scrollTop($accordion[0].header.position().top - 43 /*Main Header height*/); 
 			}
 			var $content = $accordion[0].content;
-			if($content)
-				$content.css("display", "block");
+//			if($content)
+//				$content.css("display", "block");
 		}
 		
 		

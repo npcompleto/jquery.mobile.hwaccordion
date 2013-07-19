@@ -13,6 +13,9 @@
 	padding: 15px;
 }
 
+.ui-accordion-content{
+	display: block;
+}
 
 .ui-accordion-closed .ui-accordion-content{
 	opacity: 0;
