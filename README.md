@@ -53,12 +53,27 @@ All the input fields inside a closed accordion content will be disabled.
 <div data-role="hwaccordion" data-disable-input-on-close="true">
 ```
 
+**Radio Mode**
+
+Only one accordion element at a time will be opened.
+
+```html
+<div data-role="hwaccordion" data-radio-mode="true">
+```
+
+**Icons**
+
+```html
+<div id="accordion1" data-role="hwaccordion" data-icon-opened="arrow-u" data-icon-closed="arrow-d">
+```
+
+
 **Methods**
 -
 
 **Open**
 
-hwaccordion("open", _accordionIndex_) Opens an accordion element with index _accordionIndex_ 
+hwaccordion("open", _accordionIndex_) opens an accordion element with index _accordionIndex_ 
 
 ```javascript
 $('#accordion1').hwaccordion("open",0);
@@ -66,7 +81,7 @@ $('#accordion1').hwaccordion("open",0);
 
 **Close**
 
-hwaccordion("close", _accordionIndex_) Closes an accordion element with index _accordionIndex_ 
+hwaccordion("close", _accordionIndex_) closes an accordion element with index _accordionIndex_ 
 
 ```javascript
 $('#accordion1').hwaccordion("close",0);

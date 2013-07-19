@@ -1,6 +1,6 @@
 /**
  * @author npcompleto
- * @version 0.0.1a
+ * @version 0.0.2
  */
 (function( $, undefined ) {
 
@@ -8,13 +8,9 @@ $.widget( "mobile.hwaccordion", $.mobile.widget, {
 
 	options: {
 		theme: null,
-		countTheme: "c",
-		headerTheme: "b",
-		dividerTheme: "b",
-		splitIcon: "arrow-r",
-		splitTheme: "b",
-		icon: null,
-		inset: false,
+		iconpos: "right",
+		iconOpened: "arrow-u", 
+		iconClosed: "arrow-d",
 		timing: "800ms",
 		autoScroll: false,
 		disableInput: false,
@@ -116,8 +112,8 @@ $.widget( "mobile.hwaccordion", $.mobile.widget, {
 				$header.buttonMarkup({
 					shadow: false,
 					corners: false,
-					iconpos: $elem.jqmData( "iconpos" ) || opts.iconPos || "left",
-					icon: opts.icon,
+					iconpos: opts.iconpos || "left",
+					icon: opts.iconClosed,
 					mini: opts.mini,
 					theme: opts.theme
 				});
@@ -159,11 +155,15 @@ $.widget( "mobile.hwaccordion", $.mobile.widget, {
 			$content.css(prefix + "transition", prefix+"transform 0ms"); /*TODO timing from options*/
 			$content.css(prefix + "transform", "translateY("+yTranslation+"px) translateZ("+$content.jqmData("accordion-z-position")+"px)");
 			if(!forceClose){
+				var $accordion = $content.parent();
+				var $header = $accordion[0].header;
 				if(!$content.parent().hasClass("ui-accordion-closed")){
 					$content.parent().addClass("ui-accordion-closed");
+					$header.find(".ui-icon-"+that.options.iconOpened).removeClass("ui-icon-"+that.options.iconOpened).addClass("ui-icon-"+that.options.iconClosed);
 				}
 				else{
-					$content.parent().removeClass("ui-accordion-closed");		
+					$content.parent().removeClass("ui-accordion-closed");
+					$header.find(".ui-icon-"+that.options.iconClosed).removeClass("ui-icon-"+that.options.iconClosed).addClass("ui-icon-"+that.options.iconOpened);
 				}
 			}
 						
@@ -173,13 +173,14 @@ $.widget( "mobile.hwaccordion", $.mobile.widget, {
 			$content.css(prefix + "transform", "translateY("+yTranslation+"px) translateZ("+$content.jqmData("accordion-z-position")+"px)");
 			
 			$content.one(this.endTransitionEvent, function(){
-				$accordion = $(this).parent();
-				$header = $accordion[0].header;
+				var $accordion = $(this).parent();
+				var $header = $accordion[0].header;
 				//console.log("_translateContent webkitTransitionEnd");
 				if($accordion.hasClass("ui-accordion-closing")){
 	            	$accordion.removeClass("ui-accordion-closing");			    
 	   				$accordion.addClass("ui-accordion-closed");
-	   				//$(this).css("display", "none");
+	   				$header.find(".ui-icon-"+that.options.iconOpened).removeClass("ui-icon-"+that.options.iconOpened).addClass("ui-icon-"+that.options.iconClosed);
+	   				
 				}else{
 					if($accordionRoot.options.autoScroll === true){
 						if ($accordionRoot.touchOverflowScrolling)
@@ -187,6 +188,8 @@ $.widget( "mobile.hwaccordion", $.mobile.widget, {
 						else
 							$(document).scrollTop($accordion.position().top - 43/*Main Header height*/); 
 					}
+					
+					$header.find(".ui-icon-"+that.options.iconClosed).removeClass("ui-icon-"+that.options.iconClosed).addClass("ui-icon-"+that.options.iconOpened);
 				}
 			});
 			
