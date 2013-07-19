@@ -34,6 +34,8 @@ Example:
 </div> 
 ```
 
+See a [live example](http://npcompleto.altervista.org/github/jquery.mobile.hwaccordion/example.html")
+
 **Options**
 -
 
