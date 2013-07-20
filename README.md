@@ -88,3 +88,11 @@ hwaccordion("close", _accordionIndex_) closes an accordion element with index _a
 ```javascript
 $('#accordion1').hwaccordion("close",0);
 ```
+
+**Refresh**
+
+hwaccordion("refresh") does what it seems to do.
+
+```javascript
+$('#accordion1').append('<div data-role="accordion-element"><div data-role="accordion-header"><span>Element 3</span></div><div data-role="accordion-content"><div data-role="button">Pulsante 1</div><div data-role="button">Pulsante 2</div></div></div></div>').hwaccordion("refresh");
+```

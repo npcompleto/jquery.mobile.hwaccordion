@@ -1,6 +1,6 @@
 /**
  * @author npcompleto
- * @version 0.0.2
+ * @version 0.0.3
  */
 (function( $, undefined ) {
 
@@ -100,41 +100,46 @@ $.widget( "mobile.hwaccordion", $.mobile.widget, {
 			$this.jqmData("accordion-z-position", startingZ);
 			$this.css('z-index', startingZ);
 			$this.css('position', "relative");
-			$this.find(":jqmData(role='accordion-header'):not(.ui-accordion-header)").each(function(){
+			$this.find(":jqmData(role='accordion-header')").each(function(){
 				//Header initialization
 				$header = $(this);
 				$accordionElems[i].header = $header;
-				$header.addClass("ui-accordion-header");
+				
 				if(has3d)$header.css(prefix + "transform", "translateZ("+ startingZ-- +"px)");
 				if(has3d && $accordionRoot.preserve3d)$header.css(prefix + "transform-style", "preserve-3d");
 				$header.css("z-index", startingZ);
 				$header.jqmData("accordion-z-position", startingZ);
-				$header.buttonMarkup({
-					shadow: false,
-					corners: false,
-					iconpos: opts.iconpos || "left",
-					icon: opts.iconClosed,
-					mini: opts.mini,
-					theme: opts.theme
-				});
-				if(refresh) $header.unbind("click");
-				$header.click(function(e){
-					that._toggleAccordion($accordionRoot, $(this).parent(), prefix);
-				});
+				
+				if(!$header.hasClass("ui-accordion-header")){
+					$header.addClass("ui-accordion-header");
+					$header.buttonMarkup({
+						shadow: false,
+						corners: false,
+						iconpos: opts.iconpos || "left",
+						icon: opts.iconClosed,
+						mini: opts.mini,
+						theme: opts.theme
+					});
+					$header.click(function(e){
+						that._toggleAccordion($accordionRoot, $(this).parent(), prefix);
+					});
+				}
+				
+				
 			});
 			
 			$this.find(":jqmData(role='accordion-content'):not(.ui-accordion-content)").each(function(){
 				//Content initialization
 				$content = $(this);
 				$accordionElems[i].content = $content;
-				$content.addClass("ui-accordion-content");
+				
 				if(has3d) $content.css(prefix + "transform", "translateZ("+(startingZ--)+"px)");
 				$content.jqmData("accordion-z-position", startingZ);
 				$content.css("position", "relative");
 				$content.css("z-index", startingZ);
-				//$content.css("background-color", "white");
 				if(has3d)$content.css(prefix + "transition", prefix + "transform " + opts.timing );
 				if(has3d && $accordionRoot.preserve3d)$content.css(prefix + "transform-style", "preserve-3d");
+				$content.addClass("ui-accordion-content");
 			});
 		}
 		
