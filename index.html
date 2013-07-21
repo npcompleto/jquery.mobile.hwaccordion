@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Jquery.mobile.hwaccordion by npcompleto</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Jquery.mobile.hwaccordion</h1>
+        <p>JQuery Mobile HW accelerated Accordion</p>
+
+        <p class="view"><a href="https://github.com/npcompleto/jquery.mobile.hwaccordion">View the Project on GitHub <small>npcompleto/jquery.mobile.hwaccordion</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/npcompleto/jquery.mobile.hwaccordion/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/npcompleto/jquery.mobile.hwaccordion/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/npcompleto/jquery.mobile.hwaccordion">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="jquerymobilehwaccordion" class="anchor" href="#jquerymobilehwaccordion"><span class="octicon octicon-link"></span></a>jquery.mobile.hwaccordion</h1>
+
+<p>Smooth 3D Animated accordion implemented as a JQM widget.</p>
+
+<p><strong>DOM structure:</strong></p>
+
+<ul>
+<li>Accordion
+
+<ul>
+<li>Element
+
+<ul>
+<li>Header</li>
+<li>Content</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><p>Example:</p>
+
+<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">"hwaccordion"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">"accordion-element"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">"accordion-header"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span&gt;</span>Element 1<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">"accordion-content"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;p&gt;</span>Content 1<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+
+        <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">"accordion-element"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">"accordion-header"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span&gt;</span>Element 2<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">"accordion-content"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;p&gt;</span>Content 2<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span> 
+</pre></div>
+
+<p>See a <a href="http://npcompleto.altervista.org/github/jquery.mobile.hwaccordion/example.html">live example</a></p>
+
+<h2>
+<a name="options" class="anchor" href="#options"><span class="octicon octicon-link"></span></a><strong>Options</strong>
+</h2>
+
+<p><strong>Auto-scrolling</strong></p>
+
+<p>On opening accordion will scroll  to show its content.</p>
+
+<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">"hwaccordion"</span> <span class="na">data-auto-scroll=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+</pre></div>
+
+<p><strong>Disable inputs on close</strong></p>
+
+<p>All the input fields inside a closed accordion content will be disabled.</p>
+
+<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">"hwaccordion"</span> <span class="na">data-disable-input-on-close=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+</pre></div>
+
+<p><strong>Radio Mode</strong></p>
+
+<p>Only one accordion element at a time will be opened.</p>
+
+<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">"hwaccordion"</span> <span class="na">data-radio-mode=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+</pre></div>
+
+<p><strong>Icons</strong></p>
+
+<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"accordion1"</span> <span class="na">data-role=</span><span class="s">"hwaccordion"</span> <span class="na">data-icon-opened=</span><span class="s">"arrow-u"</span> <span class="na">data-icon-closed=</span><span class="s">"arrow-d"</span><span class="nt">&gt;</span>
+</pre></div>
+
+<h2>
+<a name="methods" class="anchor" href="#methods"><span class="octicon octicon-link"></span></a><strong>Methods</strong>
+</h2>
+
+<p><strong>Open</strong></p>
+
+<p>hwaccordion("open", <em>accordionIndex</em>) opens an accordion element with index <em>accordionIndex</em> </p>
+
+<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#accordion1'</span><span class="p">).</span><span class="nx">hwaccordion</span><span class="p">(</span><span class="s2">"open"</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+</pre></div>
+
+<p><strong>Close</strong></p>
+
+<p>hwaccordion("close", <em>accordionIndex</em>) closes an accordion element with index <em>accordionIndex</em> </p>
+
+<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#accordion1'</span><span class="p">).</span><span class="nx">hwaccordion</span><span class="p">(</span><span class="s2">"close"</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+</pre></div>
+
+<p><strong>Refresh</strong></p>
+
+<p>hwaccordion("refresh") does what it seems to do.</p>
+
+<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#accordion1'</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">'&lt;div data-role="accordion-element"&gt;&lt;div data-role="accordion-header"&gt;&lt;span&gt;Element 3&lt;/span&gt;&lt;/div&gt;&lt;div data-role="accordion-content"&gt;&lt;div data-role="button"&gt;Pulsante 1&lt;/div&gt;&lt;div data-role="button"&gt;Pulsante 2&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;'</span><span class="p">).</span><span class="nx">hwaccordion</span><span class="p">(</span><span class="s2">"refresh"</span><span class="p">);</span>
+</pre></div>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/npcompleto">npcompleto</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
